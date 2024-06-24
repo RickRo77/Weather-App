@@ -1,63 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import axios from 'axios'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import MainDisplay from './components/MainDisplay';
+
 
 function App() {
-    // Define the API key and URL
-    const apiKey = '8PvjAV1hFU739FVOMhEAokrRbMxAGcPW'; // Replace 'YOUR_API_KEY' with your actual API key
-    const url1 = 'http://dataservice.accuweather.com/locations/v1/cities/search';
-    let url2='http://dataservice.accuweather.com/currentconditions/v1/'
-    let placeKey;
+    const [Data, setData] = useState(null);
+    const [Forecast,setForecast] = useState(null);
+    const apiKey = '8PvjAV1hFU739FVOMhEAokrRbMxAGcPW';
+    const LocationUrl = 'http://dataservice.accuweather.com/locations/v1/cities/search';
+    const CurrentUrl = 'http://dataservice.accuweather.com/currentconditions/v1/';
+    const ForecastUrl = 'http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/';
 
-    // Create an instance of Axios with the API key
-    // Function to fetch weather data
-    const fetchPlaceData = async () => {
-      const axiosInstance = axios.create({
-        // headers: {
-        //   'apikey': apiKey,
-        // },
-        params: {
-          'apikey':apiKey,
-          'q':'Melbourne',
-        },
-      });
-      try {
-        const response = await axiosInstance.get(url1);
-        placeKey=(response.data[0].Key);
-        console.log(response);
-      } catch (error) {
-        console.log('eeerror');
-      }
-    };
+    useEffect(() => {
+        const fetchPlaceData = async () => {
+            const axiosInstance = axios.create({
+                params: {
+                    'apikey': apiKey,
+                    'q': 'Mangalore',
+                },
+            });
+            try {
+                const response = await axiosInstance.get(LocationUrl);
+                const placeKey = response.data[0].Key;
+                await fetchWeatherData(placeKey);
+                await fetchForecastData(placeKey);
+            } catch (error) {
+                console.error('Error fetching place data:', error);
+            }
+        };
 
-    const fetchWeatherData = async () => {
-      const axiosInstance2 = axios.create({
-        // headers: {
-        //   'apikey': apiKey,
-        // },
-        params: {
-          'apikey':apiKey,
-          'details':true,
-        },
-      });
-      try {
-        const response = await axiosInstance2.get(url2+placeKey);
-        // console.log(url2+placeKey);
-        console.log(response.data[0]);
-      } catch (error) {
-        console.log('eeerror');
-      }
-    };
+        const fetchWeatherData = async (placeKey) => {
+            const axiosInstance2 = axios.create({
+                params: {
+                    'apikey': apiKey,
+                    'details': true,
+                },
+            });
+            try {
+                const response = await axiosInstance2.get(`${CurrentUrl}${placeKey}`);
+                setData(response.data[0]);
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        };
 
-    // Call the function to fetch data
-    async function call (){
-    await fetchPlaceData();
-    await fetchWeatherData();
-    }
+        const fetchForecastData = async (placeKey) => {
+          const axiosInstance3 = axios.create({
+              params: {
+                  'apikey': apiKey,
+                  'metric': true,
+              },
+          });
+          try {
+              const response = await axiosInstance3.get(`${ForecastUrl}${placeKey}`);
+              setForecast(response.data);
+              console.log(Forecast)
+          } catch (error) {
+              console.error('Error fetching forecast data:', error);
+          }
+        };
 
-    call();
-  }
+        fetchPlaceData();
+    }, []); // Empty dependency array ensures this runs only once when the component mounts
 
-export default App
+    return (
+        <div className="App">
+            {Data ? <MainDisplay Data={Data} Forecast={Forecast}/> : <p>Loading...</p>}
+        </div>
+    );
+}
+
+export default App;
