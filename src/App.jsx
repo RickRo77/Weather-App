@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MainDisplay from './components/MainDisplay';
 
-
 function App() {
     const [Data, setData] = useState(null);
-    const [Forecast,setForecast] = useState(null);
+    const [Forecast, setForecast] = useState(null);
+    const [PlaceKey, setPlaceKey] = useState('');
     const apiKey = '8PvjAV1hFU739FVOMhEAokrRbMxAGcPW';
     const LocationUrl = 'http://dataservice.accuweather.com/locations/v1/cities/search';
     const CurrentUrl = 'http://dataservice.accuweather.com/currentconditions/v1/';
@@ -21,15 +21,20 @@ function App() {
             });
             try {
                 const response = await axiosInstance.get(LocationUrl);
-                const placeKey = response.data[0].Key;
-                await fetchWeatherData(placeKey);
-                await fetchForecastData(placeKey);
+                setPlaceKey(response.data[0].Key);
+                console.log('PlaceKey fetched:', response.data[0].Key);
             } catch (error) {
                 console.error('Error fetching place data:', error);
             }
         };
 
-        const fetchWeatherData = async (placeKey) => {
+        fetchPlaceData();
+    }, []); // Empty dependency array ensures this runs only once when the component mounts
+
+    useEffect(() => {
+        const fetchWeatherData = async () => {
+            if (!PlaceKey) return;
+
             const axiosInstance2 = axios.create({
                 params: {
                     'apikey': apiKey,
@@ -37,31 +42,38 @@ function App() {
                 },
             });
             try {
-                const response = await axiosInstance2.get(`${CurrentUrl}${placeKey}`);
+                const response = await axiosInstance2.get(`${CurrentUrl}${PlaceKey}`);
                 setData(response.data[0]);
+                console.log('Weather data fetched:', response.data[0]);
             } catch (error) {
                 console.error('Error fetching weather data:', error);
             }
         };
 
-        const fetchForecastData = async (placeKey) => {
-          const axiosInstance3 = axios.create({
-              params: {
-                  'apikey': apiKey,
-                  'metric': true,
-              },
-          });
-          try {
-              const response = await axiosInstance3.get(`${ForecastUrl}${placeKey}`);
-              setForecast(response.data);
-              console.log(Forecast)
-          } catch (error) {
-              console.error('Error fetching forecast data:', error);
-          }
+        fetchWeatherData();
+    }, [PlaceKey]);
+
+    useEffect(() => {
+        const fetchForecastData = async () => {
+            if (!PlaceKey) return;
+
+            const axiosInstance3 = axios.create({
+                params: {
+                    'apikey': apiKey,
+                    'metric': true,
+                },
+            });
+            try {
+                const response = await axiosInstance3.get(`${ForecastUrl}${PlaceKey}`);
+                setForecast(response.data);
+                console.log('Forecast data fetched:', response.data);
+            } catch (error) {
+                console.error('Error fetching forecast data:', error);
+            }
         };
 
-        fetchPlaceData();
-    }, []); // Empty dependency array ensures this runs only once when the component mounts
+        fetchForecastData();
+    }, [PlaceKey]);
 
     return (
         <div className="App">

@@ -1,6 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#gifImg{
+  border-radius: 50%;
+  margin: 5%;
+  box-shadow: 0 0 60px 7px rgb(15 23 53);
+}
+h1{
+  font-size: 76px;
+}
+h2{
+  font-size:28px;
+}
+
+
+
 /* 
 th,td{
   width: 50px;
