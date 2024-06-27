@@ -1,0 +1,210 @@
+[
+    {
+        "DateTime": "2024-06-27T12:00:00+05:30",
+        "EpochDateTime": 1719469800,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": 30.6,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 49,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=12&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=12&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T13:00:00+05:30",
+        "EpochDateTime": 1719473400,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": 30,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 49,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=13&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=13&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T14:00:00+05:30",
+        "EpochDateTime": 1719477000,
+        "WeatherIcon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate",
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": 29.7,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 78,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=14&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=14&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T15:00:00+05:30",
+        "EpochDateTime": 1719480600,
+        "WeatherIcon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate",
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": 29.4,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 77,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=15&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=15&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T16:00:00+05:30",
+        "EpochDateTime": 1719484200,
+        "WeatherIcon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate",
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": 29.2,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 78,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=16&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=16&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T17:00:00+05:30",
+        "EpochDateTime": 1719487800,
+        "WeatherIcon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate",
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": 29.1,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 78,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=17&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=17&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T18:00:00+05:30",
+        "EpochDateTime": 1719491400,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": 28.9,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 49,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=18&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=18&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T19:00:00+05:30",
+        "EpochDateTime": 1719495000,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": 28.6,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 49,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=19&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=19&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T20:00:00+05:30",
+        "EpochDateTime": 1719498600,
+        "WeatherIcon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate",
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": 28.3,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 67,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=20&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=20&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T21:00:00+05:30",
+        "EpochDateTime": 1719502200,
+        "WeatherIcon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate",
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": 28,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 71,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=21&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=21&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T22:00:00+05:30",
+        "EpochDateTime": 1719505800,
+        "WeatherIcon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate",
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": 27.9,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 75,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=22&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=22&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-06-27T23:00:00+05:30",
+        "EpochDateTime": 1719509400,
+        "WeatherIcon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate",
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": 27.8,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 75,
+        "MobileLink": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=23&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/in/mumbai/204842/hourly-weather-forecast/204842?day=1&hbhhour=23&unit=c&lang=en-us"
+    }
+]
