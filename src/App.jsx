@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import MainDisplay from './src/components/MainDisplay';
-import SearchBar from './src/components/SearchBar';
+import MainDisplay from './components/MainDisplay';
+import SearchBar from './components/SearchBar';
 
 function App() {
     const [Location, setLocation] = useState('');
