@@ -6,33 +6,33 @@ export default function MainDisplay({Data,setForecast,Forecast}){
     const [gifUrl,setUrl]=useState('')
 
 
-    useEffect(() => {
-        fetch('src/components/Data.json') // adjust the path based on where your JSON file is located in the public folder
-            .then(response => response.json())
-            .then(data => setForecast(data))
-            .catch(error => console.error('Error loading JSON:', error));
-    }, []);
+    // useEffect(() => {
+    //     fetch('src/components/Data.json') // adjust the path based on where your JSON file is located in the public folder
+    //         .then(response => response.json())
+    //         .then(data => setForecast(data))
+    //         .catch(error => console.error('Error loading JSON:', error));
+    // }, []);
 
-    // const Temp=Math.round(Data.Temperature.Metric.Value);
-    // const Cond=Data.WeatherText;
-    // const Icon=Data.WeatherIcon;
-    // const Hi=Math.round(Data.TemperatureSummary.Past12HourRange.Maximum.Metric.Value);
-    // const Low=Math.round(Data.TemperatureSummary.Past12HourRange.Minimum.Metric.Value);
-    // const Uv=Data.UVIndex;
-    // const Wind=Math.round(Data.Wind.Speed.Metric.Value);
-    // const Hum=Data.RelativeHumidity;
-    // const Cloud=Data.CloudCover;
+    const Temp=Math.round(Data.Temperature.Metric.Value);
+    const Cond=Data.WeatherText;
+    const Icon=Data.WeatherIcon;
+    const Hi=Math.round(Data.TemperatureSummary.Past12HourRange.Maximum.Metric.Value);
+    const Low=Math.round(Data.TemperatureSummary.Past12HourRange.Minimum.Metric.Value);
+    const Uv=Data.UVIndex;
+    const Wind=Math.round(Data.Wind.Speed.Metric.Value);
+    const Hum=Data.RelativeHumidity;
+    const Cloud=Data.CloudCover;
 
     
-    const Temp=Math.round(27);
-    const Cond='Cloudy';
-    const Icon=19;
-    const Hi=Math.round(32);
-    const Low=Math.round(24);
-    const Uv=4;
-    const Wind=Math.round(15);
-    const Hum=90;
-    const Cloud=70;
+    // const Temp=Math.round(27);
+    // const Cond='Cloudy';
+    // const Icon=19;
+    // const Hi=Math.round(32);
+    // const Low=Math.round(24);
+    // const Uv=4;
+    // const Wind=Math.round(15);
+    // const Hum=90;
+    // const Cloud=70;
 
     
     useEffect(() => {
@@ -66,7 +66,8 @@ export default function MainDisplay({Data,setForecast,Forecast}){
     if(Forecast)
         {
             return(
-                <div style={{padding:'5%'}}>
+                <div>
+                    {/* <div className="flex flex-col"> */}
                     <div className="flex flex-row items-center h-[30vh]">
                         <div>
                             <h1>{Temp}&deg;</h1>
@@ -77,73 +78,82 @@ export default function MainDisplay({Data,setForecast,Forecast}){
                         <img id="gifImg" src={gifUrl}/>
                         
                     </div>
+
+
+
                     
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-2 gap-2 max-w-screen-md">
                         <div class={box}>
-                            <img src="/src/assets/drop.png" className="w-2/5"></img>
+                            <img src="/src/assets/drop.png" className="h-16 w-16 object-contain"></img>
                             <div className="flex flex-col items-center content-center pl-3">
                             <h3>Humidity</h3>
                             <h3>{Hum}</h3>
                             </div>
                         </div>
                         <div class={box}>
-                            <img src="/src/assets/wind.png" className="w-2/5"></img>
+                            <img src="/src/assets/wind.png" className="h-16 w-16 object-contain"></img>
                             <div className="flex flex-col items-center content-center pl-3">
                             <h3>Wind</h3>
                             <h3>{Wind}</h3>
                             </div>
                         </div>
                         <div class={box}>
-                            <img src="/src/assets/rays.png" className="w-2/5"></img>
+                            <img src="/src/assets/rays.png" className="h-16 w-16 object-contain"></img>
                             <div className="flex flex-col items-center content-center pl-3">
                             <h3>UV Index</h3>
                             <h3>{Uv}</h3>
                             </div>
                         </div>
                         <div class={box}>
-                            <img src="/src/assets/cloud.png" className="w-2/5"></img>
+                            <img src="/src/assets/cloud.png" className="h-16 w-16 object-contain"></img>
                             <div className="flex flex-col items-center content-center pl-3">
                             <h3>Cloud</h3>
                             <h3>{Cloud}</h3>
                             </div>
                         </div>
                     </div>
-                    <div className="overflow-x-auto flex" style={{marginTop:'10%'}}>
-                        <table>
+                    {/* </div> */}
+
+
+
+                    <div className="flex" style={{marginTop:'3vh'}}>
+                        <table className="border border-transparent rounded backdrop-brightness-75">
                             <thead>
                                 <tr><th>Time</th></tr>
-                                <tr><th>Temperature</th></tr>
-                                <tr><th>Precipitation</th></tr>
+                                <tr><th>Temp</th></tr>
+                                <tr><th>Prec</th></tr>
                             </thead>
                         </table>
-                        <table className="border-spacing-4 p-4 backdrop-brightness-75 border border-transparent rounded">
-                            <thead>
-                                <tr>{Forecast.map((obj)=>{
-                                    return(
-                                        <th className="p-2">{obj.DateTime.slice(11,16)}</th>
-                                    )
-                                })}</tr>
-                            </thead>
-                            <tbody>
-                                {/* <tr>{Forecast.map((obj)=>{
-                                    return(
-                                        <td className="p-2">{obj.IconPhrase}</td>
-                                    )
-                                })}</tr> */}
-                                <tr>{Forecast.map((obj)=>{
-                                    return(
-                                        <td className="p-2 text-center">{Math.round(obj.Temperature.Value)}&deg;</td>
-                                    )
-                                })}</tr>
-                                <tr>{Forecast.map((obj)=>{
-                                    return(
-                                        <td className="p-2 text-center">
-                                            {obj.PrecipitationProbability}{'%'}
-                                        </td>
-                                    )
-                                })}</tr>
-                            </tbody>
-                        </table>
+                        <div className="overflow-x-auto">
+                            <table className="border-spacing-4 p-4 backdrop-brightness-75 border border-transparent rounded">
+                                <thead>
+                                    <tr>{Forecast.map((obj)=>{
+                                        return(
+                                            <th className="p-2">{obj.DateTime.slice(11,16)}</th>
+                                        )
+                                    })}</tr>
+                                </thead>
+                                <tbody>
+                                    {/* <tr>{Forecast.map((obj)=>{
+                                        return(
+                                            <td className="p-2">{obj.IconPhrase}</td>
+                                        )
+                                    })}</tr> */}
+                                    <tr>{Forecast.map((obj)=>{
+                                        return(
+                                            <td className="p-2 text-center">{Math.round(obj.Temperature.Value)}&deg;</td>
+                                        )
+                                    })}</tr>
+                                    <tr>{Forecast.map((obj)=>{
+                                        return(
+                                            <td className="p-2 text-center">
+                                                {obj.PrecipitationProbability}{'%'}
+                                            </td>
+                                        )
+                                    })}</tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             )    

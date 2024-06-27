@@ -9,7 +9,7 @@ export default function SearchBar({Location,setLocation})
     };
 
     return(
-        <div className="flex items-center" style={{padding:'5%', paddingBottom:'0%'}}>
+        <div className="flex items-center">
             <input
                 type="text"
                 value={Loc}
