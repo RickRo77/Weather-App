@@ -22,7 +22,7 @@ export default function SearchBar({Location,setLocation})
                 onClick={()=>{setLocation(Loc)}}
                 className="bg-blue-500 text-white p-2 rounded h-[5vh]"
             >
-                <img src="../assets/search.png" style={{height:'100%'}}/>
+                <img src="src/assets/search.png" style={{height:'100%'}}/>
             </button>
         </div>
     )
