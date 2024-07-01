@@ -9,9 +9,9 @@ function App() {
     const [Forecast, setForecast] = useState(null);
     const [PlaceKey, setPlaceKey] = useState('');
     const apiKey = '8PvjAV1hFU739FVOMhEAokrRbMxAGcPW';
-    const LocationUrl = 'http://dataservice.accuweather.com/locations/v1/cities/search';
-    const CurrentUrl = 'http://dataservice.accuweather.com/currentconditions/v1/';
-    const ForecastUrl = 'http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/';
+    const LocationUrl = 'https://dataservice.accuweather.com/locations/v1/cities/search';
+    const CurrentUrl = 'https://dataservice.accuweather.com/currentconditions/v1/';
+    const ForecastUrl = 'https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/';
 
     // useEffect(()=>{console.log(Location)},[Location])
 
